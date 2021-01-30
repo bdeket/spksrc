@@ -15,6 +15,7 @@ GNU_CONFIGURE = 1
 CONFIGURE_ARGS = --enable-bcdefault --enable-shared
 
 CONFIGURE_TARGET = racket_configure
+BUILD_DIR = $(WORK_DIR)/$(PKG_DIR)/build
 
 #PRE_COMPILE_TARGET = zsh_pre_compile
 
@@ -37,10 +38,9 @@ include ../../mk/spksrc.cross-cc.mk
 
 .PHONY: racket_configure
 racket_configure:
-	$(RUN) BUILD_DIR = $(WORK_DIR)/$(PKG_DIR)/build
-	mkdir -p $(BUILD_DIR)
+	$(RUN) mkdir -p $(WORK_DIR)/$(PKG_DIR)/build
 	echo $(pwd)
-	cd $(BUILD_DIR) 
+	cd $(WORK_DIR)/$(PKG_DIR)/build 
 	echo $(pwd)
 	$(WORK_DIR)/$(PKG_DIR)/src/configure $(REAL_CONFIGURE_ARGS)
 
