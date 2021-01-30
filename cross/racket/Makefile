@@ -12,7 +12,7 @@ COMMENT  = Racket programming language - minimal installation.
 LICENSE  = MIT
 
 #GNU_CONFIGURE = 1
-P#RE_COMPILE_TARGET = zsh_pre_compile
+#PRE_COMPILE_TARGET = zsh_pre_compile
 
 #ifeq ($(ZSH_STATIC_MODULES),true)
 #	BUILD_MSG = "Building zsh with statically linked modules."
