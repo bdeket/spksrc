@@ -12,9 +12,9 @@ COMMENT  = Racket programming language - minimal installation.
 LICENSE  = MIT
 
 GNU_CONFIGURE = 1
-CONFIGURE_ARGS = --enable-bcdefault --enable-shared --prefix=$(INSTALL_DIR)
+CONFIGURE_ARGS = --enable-bcdefault --enable-shared
 
-COMPILE_TARGET = racket_compile
+CONFIGURE_TARGET = racket_configure
 
 #PRE_COMPILE_TARGET = zsh_pre_compile
 
@@ -35,8 +35,8 @@ include ../../mk/spksrc.cross-cc.mk
 #	# gdbm is not available, so don't try to compile it.
 #	@$(RUN) sed -i 's|\(name=zsh/db/gdbm.*\)link=static|\1link=no|' config.modules
 
-.PHONY: racket_compile
-racket_compile:
+.PHONY: racket_configure
+racket_configure:
 	@$(RUN) echo $(INSTALL_DIR)
 	@$(RUN) ls
 #	@$(MSG) $(BUILD_MSG)
