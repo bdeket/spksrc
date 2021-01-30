@@ -37,8 +37,8 @@ include ../../mk/spksrc.cross-cc.mk
 
 .PHONY: racket_compile
 racket_compile:
-  @$(RUN) echo $(INSTALL_DIR)
-  @$(RUN) ls
+	@$(RUN) echo $(INSTALL_DIR)
+	@$(RUN) ls
 #	@$(MSG) $(BUILD_MSG)
 
 #.PHONY: zsh_install
