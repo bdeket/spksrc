@@ -25,17 +25,12 @@ include ../../mk/spksrc.cross-cc.mk
 .PHONY: racket_configure
 racket_configure:
 	$(RUN) mkdir -p $(WORK_DIR)/$(PKG_DIR)/build
-	cd $(WORK_DIR)/$(PKG_DIR)/build 
-	$(WORK_DIR)/$(PKG_DIR)/src/configure $(REAL_CONFIGURE_ARGS)
+	cd $(WORK_DIR)/$(PKG_DIR)/build && ../src/configure $(REAL_CONFIGURE_ARGS)
 
 .PHONY: racket_compile
 racket_compile:
-	$(RUN) cd $(WORK_DIR)/$(PKG_DIR)/build
-	echo $(pwd .)
-	$(MAKE) $(COMPILE_MAKE_OPTIONS)
+	$(RUN) cd $(WORK_DIR)/$(PKG_DIR)/build && $(MAKE) $(COMPILE_MAKE_OPTIONS)
 
 .PHONY: racket_install
 racket_install:
-	$(RUN) cd $(WORK_DIR)/$(PKG_DIR)/build
-	echo $(pwd .)
-	$(MAKE) DESTDIR=$(INSTALL_DIR) install prefix=$(INSTALL_PREFIX)
+	$(RUN) cd $(WORK_DIR)/$(PKG_DIR)/build && $(MAKE) DESTDIR=$(INSTALL_DIR) install prefix=$(INSTALL_PREFIX)
