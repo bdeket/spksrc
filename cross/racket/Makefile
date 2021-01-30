@@ -12,6 +12,8 @@ COMMENT  = Racket programming language - minimal installation.
 LICENSE  = MIT
 
 GNU_CONFIGURE = 1
+CONFIGURE_ARGS = --enable-bcdefault --enable-shared --prefix=/usr/share/racket
+
 #PRE_COMPILE_TARGET = zsh_pre_compile
 
 #ifeq ($(ZSH_STATIC_MODULES),true)
