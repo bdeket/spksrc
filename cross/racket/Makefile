@@ -11,7 +11,7 @@ HOMEPAGE = https://racket-lang.org/
 COMMENT  = Racket programming language - minimal installation.
 LICENSE  = MIT
 
-#GNU_CONFIGURE = 1
+GNU_CONFIGURE = 1
 #PRE_COMPILE_TARGET = zsh_pre_compile
 
 #ifeq ($(ZSH_STATIC_MODULES),true)
