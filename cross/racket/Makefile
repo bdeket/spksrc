@@ -23,7 +23,7 @@ GNU_CONFIGURE = 1
 
 #INSTALL_TARGET = zsh_install
 
-#include ../../mk/spksrc.cross-cc.mk
+include ../../mk/spksrc.cross-cc.mk
 
 #.PHONY: link-zsh-modules
 #link-zsh-modules:
