@@ -29,8 +29,8 @@ racket_configure:
 
 .PHONY: racket_compile
 racket_compile:
-	$(RUN) cd $(WORK_DIR)/$(PKG_DIR)/build && $(MAKE) $(COMPILE_MAKE_OPTIONS)
+	$(RUN) && cd $(WORK_DIR)/$(PKG_DIR)/build && $(MAKE) $(COMPILE_MAKE_OPTIONS)
 
 .PHONY: racket_install
 racket_install:
-	$(RUN) cd $(WORK_DIR)/$(PKG_DIR)/build && $(MAKE) DESTDIR=$(INSTALL_DIR) install prefix=$(INSTALL_PREFIX)
+	$(RUN) && cd $(WORK_DIR)/$(PKG_DIR)/build && $(MAKE) DESTDIR=$(INSTALL_DIR) install prefix=$(INSTALL_PREFIX)
