@@ -37,10 +37,12 @@ include ../../mk/spksrc.cross-cc.mk
 
 .PHONY: racket_configure
 racket_configure:
-	$(RUN) mkdir -p build
-	cd build 
+	$(RUN) BUILD_DIR = $(WORK_DIR)/$(PKG_DIR)/build
+	mkdir -p $(BUILD_DIR)
 	echo $(pwd)
-	../src/configure $(REAL_CONFIGURE_ARGS)
+	cd $(BUILD_DIR) 
+	echo $(pwd)
+	$(WORK_DIR)/$(PKG_DIR)/src/configure $(REAL_CONFIGURE_ARGS)
 
 #	@$(MSG) $(BUILD_MSG)
 
