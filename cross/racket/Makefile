@@ -1,9 +1,9 @@
 PKG_NAME = racket
 PKG_VERS = 7.9
-PKG_EXT = tar.xz
-PKG_DIST_NAME = $(PKG_NAME)-$(PKG_VERS).$(PKG_EXT)
+PKG_EXT = tgz
+PKG_DIST_NAME = $(PKG_NAME)-minimal-$(PKG_VERS)-src-builtpkgs.$(PKG_EXT)
 PKG_DIST_SITE = https://download.racket-lang.org/releases/$(PKG_VERS)/installers/
-PKG_DIR = $(PKG_NAME)-minimal-$(PKG_VERS)-src-builtpkgs.tgz
+PKG_DIR = $(PKG_NAME)-$(PKG_VERS)
 
 #DEPENDS = cross/ncursesw
 
