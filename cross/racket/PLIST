@@ -1,0 +1,3 @@
+bin:bin/racket
+bin:bin/raco
+rsc:share/racket

@@ -1,0 +1,40 @@
+PKG_NAME = racket
+PKG_VERS = 7.9
+PKG_EXT = tar.xz
+PKG_DIST_NAME = $(PKG_NAME)-$(PKG_VERS).$(PKG_EXT)
+PKG_DIST_SITE = https://download.racket-lang.org/releases/$(PKG_VERS)/installers/
+PKG_DIR = $(PKG_NAME)-minimal-$(PKG_VERS)-src-builtpkgs.tgz
+
+#DEPENDS = cross/ncursesw
+
+HOMEPAGE = https://racket-lang.org/
+COMMENT  = Racket programming language - minimal installation.
+LICENSE  = MIT
+
+#GNU_CONFIGURE = 1
+P#RE_COMPILE_TARGET = zsh_pre_compile
+
+#ifeq ($(ZSH_STATIC_MODULES),true)
+#	BUILD_MSG = "Building zsh with statically linked modules."
+#	POST_CONFIGURE_TARGET = link-zsh-modules
+#else
+#	BUILD_MSG = "Building zsh with dynamically linked modules."
+#endif
+
+#INSTALL_TARGET = zsh_install
+
+#include ../../mk/spksrc.cross-cc.mk
+
+#.PHONY: link-zsh-modules
+#link-zsh-modules:
+#	@$(RUN) sed -i 's/link=no/link=static/' config.modules
+#	# gdbm is not available, so don't try to compile it.
+#	@$(RUN) sed -i 's|\(name=zsh/db/gdbm.*\)link=static|\1link=no|' config.modules
+
+#.PHONY: zsh_pre_compile
+#zsh_pre_compile:
+#	@$(MSG) $(BUILD_MSG)
+
+#.PHONY: zsh_install
+#zsh_install:
+#	umask 022; $(RUN) $(MAKE) install DESTDIR=$(INSTALL_DIR)
